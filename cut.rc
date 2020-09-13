@@ -1,0 +1,8 @@
+#!/bin/env rc
+
+if(test $#* '!=' 4 ){
+	echo usage: $0 [input] [start] [end] [output] >[2=1]
+	exit 1
+}
+
+exec ffmpeg -i $1 -ss $2 -to $3 -async 1 $4

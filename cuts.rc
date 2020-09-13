@@ -1,0 +1,20 @@
+#!/bin/env rc
+
+if(test $#* '!=' 1 ){
+	echo usage: $0 [input] >[2=1]
+	exit 1
+}
+
+'in' = $1
+shift
+'*' = `{cat}
+
+while(test $#* '!=' 3){
+	start = $1
+	end = $2
+	out = $3
+	shift 3
+	yes | vidcut $in $start $end $out &
+}
+
+yes | exec vidcut $in $1 $2 $3

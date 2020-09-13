@@ -1,0 +1,4 @@
+NAME = cut cuts
+PREF = vid
+LOCAL = $HOME/local
+BIN = $LOCAL/bin
