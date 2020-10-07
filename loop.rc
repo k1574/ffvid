@@ -1,0 +1,8 @@
+#!/bin/env rc
+
+if(test $#* '!=' 3 ){
+	echo usage: $0 [input] [times] [output] >[2=1]
+	exit 1
+}
+
+exec ffmpeg -stream_loop $2 -i $1 -c copy $3
