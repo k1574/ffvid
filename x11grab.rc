@@ -1,0 +1,18 @@
+#!/bin/env rc
+# Script to record screen without audio.
+
+if(test $#* -lt 6){
+	echo usage: $0 [width] [height] [framerate] [x] [y] [out]>[2=1]
+	exit 1
+}
+	
+w = $1
+h = $2
+fr = $3
+x = $4
+y = $5
+out = $6
+for(i in `{seq 6})
+	shift
+
+ffmpeg -video_size $w^x^$h -framerate $fr -f x11grab -i :0.0+$x^,$y $* $out
