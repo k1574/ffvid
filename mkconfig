@@ -1,4 +1,4 @@
-NAME = cut cuts loop crop
+NAME = cut cuts loop crop text
 PREF = vid
 LOCAL = $HOME/local
 BIN = $LOCAL/bin

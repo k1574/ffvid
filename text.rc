@@ -1,0 +1,27 @@
+#!/bin/env rc
+
+# Script to add text to video.
+
+echo $#*
+if(test $#* '!=' 11){
+	echo usage: $0 [in] [fontfile] [text] [fontcolor] [fontsize] '\' >[2=1]
+	echo '	'[box] [boxcolor] [boxorderw] '\' >[2=1]
+	echo '	'[x] [y] [out] >[2=1]
+	exit 1
+}
+
+inf = $1
+fontfile = $2
+text = $3
+fontcolor = $4
+fontsize = $5
+box = $6
+boxcolor = $7
+boxborderw = $8
+x = $9
+y = $10
+out = $11
+
+ffmpeg -i $inf -vf 'drawtext=fontfile='$fontfile': \
+	text='$text':fontcolor='$fontcolor':fontsize='$fontsize':box='$box': \
+	boxcolor='$boxcolor':boxborderw='$boxborderw':x='$x':y='$y'' -acodec copy $out

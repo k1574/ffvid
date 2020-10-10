@@ -1,0 +1,8 @@
+#!/bin/env rc
+
+if(test $#* '!=' 6 ){
+	echo usage: $0 [input] [width] [height] [x] [y] [output] >[2=1]
+	exit 1
+}
+
+exec ffmpeg -i $1 -vf crop'='$2:$3:$4:$5 $6
