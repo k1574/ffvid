@@ -1,0 +1,12 @@
+#!/bin/env rc
+
+if(test $#* '!=' 7 ){
+	echo usage: $0 [input] [img] [x] [y] [start] [end] [output] >[2=1]
+	exit 1
+}
+
+exec ffmpeg -i $1 -i $2 \
+	-filter_complex '[0:v][1:v] overlay='$3':'$4':enable=''between(t,'$5','$6')''' \
+	-pix_fmt yuv420p -c:a copy \
+	$7
+
