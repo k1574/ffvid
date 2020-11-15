@@ -3,8 +3,7 @@ TGT = $NAME
 MKSHELL = rc
 install :V: $TGT
 	for(i in $prereq){
-		cp -f $i.rc $BIN/$PREF$i
-		chmod 0755 $BIN/$PREF$i
+		cp -f $i $EXE/$i
+		chmod 0755 $EXE/$i
 	}
-% :Q:
-	touch $target.rc
+
