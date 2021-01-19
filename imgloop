@@ -1,0 +1,14 @@
+#!/bin/env rc
+
+if(test $#* '!=' 4 ){
+	echo usage: $0 [input] [duration] [scale] [output] >[2=1]
+	exit 1
+}
+
+input=$1
+duration=$2
+scale=$3
+output=$4
+
+exec ffmpeg -i $input -t $duration -vf 'scale='$scale $output
+

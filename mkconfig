@@ -1,4 +1,4 @@
-NAME = cut cuts loop crop text x11grab imgoverlay
+NAME = cut cuts loop crop text x11grab imgoverlay imgloop
 PREF = ffvid
 EXE = $HOME/exe
 
