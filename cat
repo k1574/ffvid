@@ -1,0 +1,8 @@
+#!/bin/env rc
+
+if(test $#* '!=' 2 ){
+	echo usage: $0 '[input_list] [output]' >[2=1]
+	exit 1
+}
+
+exec ffmpeg -f concat -i $1 -c copy $2

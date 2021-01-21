@@ -1,7 +1,7 @@
 #!/bin/env rc
 
 if(test $#* '!=' 7 ){
-	echo usage: $0 [input] [img] [x] [y] [start] [end] [output] >[2=1]
+	echo usage: $0 '[input] [img] [x] [y] [start] [end] [output]' >[2=1]
 	exit 1
 }
 

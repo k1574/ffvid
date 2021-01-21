@@ -1,7 +1,7 @@
 #!/bin/env rc
 
 if(test $#* '!=' 3 ){
-	echo usage: $0 [input] [times] [output] >[2=1]
+	echo usage: $0 '[input] [times] [output]' >[2=1]
 	exit 1
 }
 

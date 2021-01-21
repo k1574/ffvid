@@ -2,7 +2,7 @@
 # Script to record screen without audio.
 
 if(test $#* -lt 6){
-	echo usage: $0 [width] [height] [framerate] [x] [y] [out]>[2=1]
+	echo usage: $0 '[width] [height] [framerate] [x] [y] [out]' >[2=1]
 	exit 1
 }
 	
